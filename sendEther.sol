@@ -61,7 +61,7 @@ contract SendEther {
 
     function sendViaCall(address payable _to) public payable {
         //Call returns a boolean inndicating success or failure
-        //THis is the recommended method to use
+        //This is the recommended method to use
         (bool sent, bytes memory data) = _to.call{value: msg.value}("");
         require(sent, "Failed to send ether");
     }
