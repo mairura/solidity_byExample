@@ -1,0 +1,20 @@
+//Events allow logging to the ethereum blockchain. SOme usecases include:
+//-Listening for events and updating user interface
+//-a cheap form of storage
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.13;
+
+contract Event {
+    //Event declaration
+    //Up to 3 parameters can be indexed
+    //Indexed parameters helps you filter the logs by the parameter
+    event Log(address indexed sender, string message);
+    event AnotherLog();
+
+    function test() public {
+        emit Log(msg.sender, "Hello World!");
+        emit Log(msg.sender, "Hello EVM!");
+        emit AnotherLog();
+    }
+} 
