@@ -51,3 +51,16 @@ contract Base {
     //State variables cannot be external so this code wont compile
     //string external externalVar = "my external variable";
 }
+
+
+contract Child is Base {
+    //Inherited contracts do not have access to private functions and state variables
+    //function testPrivateFunc() public pure returns (string memory) {
+    //    return privateFunc()
+    //}
+
+    //Internal function can be called inside child contracts
+    function testInternalFunc() public pure override returns (string memory) {
+        return internalFunc();
+    } 
+}
