@@ -4,7 +4,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
 
-//Note: Deplo this contract first
+//Note: Deploy this contract first
 contract B {
     //NOTE: storage layout must be same as contract A
     uint public num;
